@@ -1,5 +1,5 @@
 class LoginController < ApplicationController
-  skip_before_action :authenticate_user!, only: :login
+  skip_before_action :authenticate_user!
 
   URL = "https://api.weixin.qq.com/sns/jscode2session".freeze
 
