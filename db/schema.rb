@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2019_07_30_063544) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "open_id"
     t.string "name"
     t.text "description"
     t.boolean "is_shifu", default: false
