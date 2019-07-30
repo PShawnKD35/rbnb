@@ -5,8 +5,8 @@ class LoginController < ApplicationController
 
   def wechat_user
     params = {
-      appId: appId,
-      secret: secret,
+      appId: ENV['appId'],
+      secret: ENV['secret'],
       js_code: params[:code],
       grant_type: authorization_code
     }
