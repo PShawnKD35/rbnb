@@ -10,9 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_07_30_041842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "available_services", force: :cascade do |t|
+    t.bigint "service_id"
+    t.bigint "user_id"
+    t.boolean "confirmed"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["service_id"], name: "index_available_services_on_service_id"
+    t.index ["user_id"], name: "index_available_services_on_user_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.bigint "service_id"
+    t.string "name"
+    t.text "description"
+    t.datetime "purchase_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["service_id"], name: "index_items_on_service_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "address"
+    t.integer "charge"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_services_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "name"
+    t.text "description"
+    t.boolean "is_shifu", default: false
+    t.float "wallet", default: 0.0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "available_services", "services"
+  add_foreign_key "available_services", "users"
+  add_foreign_key "items", "services"
+  add_foreign_key "services", "users"
 end

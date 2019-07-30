@@ -34,9 +34,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string :name
       t.text :description
-      t.string :address
-      t.boolean :is_shifu
-      t.float :wallet
+      t.boolean :is_shifu, default: false
+      t.float :wallet, default: 0
 
       t.timestamps null: false
     end
