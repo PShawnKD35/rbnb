@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_07_30_041842) do
   create_table "available_services", force: :cascade do |t|
     t.bigint "service_id"
     t.bigint "user_id"
-    t.boolean "confirmed"
+    t.boolean "confirmed", default: false
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at", null: false
