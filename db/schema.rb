@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_30_041842) do
+ActiveRecord::Schema.define(version: 2019_07_30_063544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 2019_07_30_041842) do
     t.index ["user_id"], name: "index_available_services_on_user_id"
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "available_service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["available_service_id"], name: "index_bookings_on_available_service_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "items", force: :cascade do |t|
     t.bigint "service_id"
     t.string "name"
@@ -38,6 +47,8 @@ ActiveRecord::Schema.define(version: 2019_07_30_041842) do
   end
 
   create_table "services", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
     t.string "address"
     t.integer "charge"
     t.bigint "user_id"
@@ -64,6 +75,8 @@ ActiveRecord::Schema.define(version: 2019_07_30_041842) do
 
   add_foreign_key "available_services", "services"
   add_foreign_key "available_services", "users"
+  add_foreign_key "bookings", "available_services"
+  add_foreign_key "bookings", "users"
   add_foreign_key "items", "services"
   add_foreign_key "services", "users"
 end
