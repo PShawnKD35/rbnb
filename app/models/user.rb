@@ -6,4 +6,12 @@ class User < ApplicationRecord
   has_one :service, dependent: :destroy
   has_many :bookings, dependent: :destroy
   # validates :name, presence: true
+
+  def password_required?
+    !self.open_id
+  end
+  
+  def email_required?
+    !self.open_id
+  end
 end
