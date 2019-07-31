@@ -1,8 +1,8 @@
 class Api::V1::ServicesController < Api::V1::BaseController
-  before_action :set_service, only: [:show, :update, :destroy]
+  before_action :set_service, only: %i[show update destroy]
   # skip before authentication is done
   skip_before_action :verify_authenticity_token
-  
+
   def index
     # @services = policy_scope(Service)
     @services = Service.all
@@ -20,6 +20,15 @@ class Api::V1::ServicesController < Api::V1::BaseController
   end
 
   def destroy
+  end
+
+  def search
+    @items = Item.where("name LIKE ?", params[:item_name])
+    puts "============"
+    puts @items
+    puts "============"
+    @services = @items.select(&:service).uniq
+    render json: @services
   end
 
   private

@@ -11,7 +11,11 @@ Rails.application.routes.draw do
           end
         end
       end
-      resources :services, only: [:index, :show, :update, :destroy]
+      resources :services, only: [:index, :show, :update, :destroy] do
+        collection do
+          get 'search'
+        end
+      end
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

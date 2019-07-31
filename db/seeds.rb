@@ -22,9 +22,9 @@ userthree = User.create!(email: "olivia@yahoo.com", password: "123456", name: "O
 userfour = User.create!(email: "paul@yahoo.com", password: "123456", name: "Paul", is_shifu: true)
 # service
 userone_service = Service.create!(name: "DJ for 10 years", user: userone, charge: 10, address: "Kerry Centre, Shanghai, China", description: "I am a super experienced DJ. I have DJ-ed in Shanghai, London and Paris.")
-usertwo_service = Service.create!(name: "DJ for noobs", user: usertwo, charge: 10, address: "Kerry Centre, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!")
-userthree_service = Service.create!(name: "Best DJ in town", user: userthree, charge: 10, address: "Kerry Centre, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!")
-userfour_service = Service.create!(name: "Noob learn DJ", user: userfour, charge: 10, address: "Kerry Centre, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!")
+usertwo_service = Service.create!(name: "DJ for noobs", user: usertwo, charge: 10, address: "iapm, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!")
+userthree_service = Service.create!(name: "Best DJ in town", user: userthree, charge: 10, address: "the Puli hotel, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!")
+userfour_service = Service.create!(name: "Noob learn DJ", user: userfour, charge: 10, address: "Jing'an Temple, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!")
 # items
 Item.create!(name: "Cool DJ set", description: "Numark M2BLACK Professional Two-Channel Scratch Mixer with 3-band EQ per Channel", service: userone_service)
 Item.create!(name: "Awesome DJ set", description: "Rockville RDJ3BT2 Channel DJ Mixer with USB, Bluetooth, Talkover, 4 Line Inputs", service: usertwo_service)
