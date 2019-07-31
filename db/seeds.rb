@@ -30,3 +30,5 @@ Item.create!(name: "Cool DJ set", description: "Numark M2BLACK Professional Two-
 Item.create!(name: "Awesome DJ set", description: "Rockville RDJ3BT2 Channel DJ Mixer with USB, Bluetooth, Talkover, 4 Line Inputs", service: usertwo_service)
 Item.create!(name: "Brand new DJ set", description: "Hercules DJControl Compact All-in-one Controller Solution with Virtual DJ LE Software Download", service: userthree_service)
 Item.create!(name: "Classic DJ set", description: "Numark M2BLACK Professional Two-Channel Scratch Mixer with 3-band EQ per Channel", service: userfour_service)
+# item on the same service
+Item.create!(name: "Iron Suit", description: "Bought at Avengers premium", service: usertwo_service)

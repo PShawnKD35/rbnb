@@ -24,10 +24,7 @@ class Api::V1::ServicesController < Api::V1::BaseController
 
   def search
     @items = Item.where("lower(name) LIKE ?", "%#{params[:item_name].downcase}%")
-    puts "============"
-    puts @items
-    puts "============"
-    @services = @items.select(&:service).uniq
+    @services = @items.map(&:service).uniq
     render json: @services
   end
 
