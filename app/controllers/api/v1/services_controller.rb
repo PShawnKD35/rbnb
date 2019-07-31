@@ -23,7 +23,7 @@ class Api::V1::ServicesController < Api::V1::BaseController
   end
 
   def search
-    @items = Item.where("name LIKE ?", params[:item_name])
+    @items = Item.where("lower(name) LIKE ?", "%#{params[:item_name].downcase}%")
     puts "============"
     puts @items
     puts "============"
