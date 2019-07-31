@@ -1,11 +1,14 @@
 class Api::V1::AvailableServicesController < Api::V1::BaseController
+  skip_before_action :verify_authenticity_token
+  
   def create
     @available_service = AvailableService.new(available_service_params)
-    @available_service.service = params[:service_id]
+    @available_service.service_id = params[:service_id]
+    @service = @available_service.service
     if @available_service.save!
-      render :show, status: :created
+      render "api/v1/services/show", status: :created
     else
-      render text: "Eroorr"
+      render json: { message: "Shit, something wrong happened" }
     end
   end
   

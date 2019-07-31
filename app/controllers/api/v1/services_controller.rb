@@ -14,12 +14,24 @@ class Api::V1::ServicesController < Api::V1::BaseController
   end
 
   def create
+    @service = Service.new(service_params)
+    @service.user = params[:user_id]
+    if @service.save
+      render json: @service
+    else
+      render json: { message: "shit, something wrong happened" }
+    end
   end
 
   def update
   end
 
   def destroy
+    if @service.destroy
+      head: :no_content
+    else
+      render json: { message: "shit, something wrong happened"}
+    end
   end
 
   def search
