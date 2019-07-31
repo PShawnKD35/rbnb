@@ -16,7 +16,7 @@ Rails.application.routes.draw do
         resources :available_services, only: [:create]
       end
 
-      resources :available_services, only: [:show, :destroy] do
+      resources :available_services, only: [:destroy] do
         resources :bookings, only: [:create]
       end
 
