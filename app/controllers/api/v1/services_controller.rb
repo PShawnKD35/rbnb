@@ -4,12 +4,13 @@ class Api::V1::ServicesController < Api::V1::BaseController
   skip_before_action :verify_authenticity_token
   
   def index
-    @services = policy_scope(Service)
+    # @services = policy_scope(Service)
+    @services = Service.all
     render json: @services
   end
 
   def show
-    render json: @service
+    # render json: @service
   end
 
   def create
@@ -25,7 +26,7 @@ class Api::V1::ServicesController < Api::V1::BaseController
 
   def set_service
     @service = Service.find(params[:id])
-    autorize @service # For Pundit
+    # authorize @service # For Pundit
   end
 
   def service_params
