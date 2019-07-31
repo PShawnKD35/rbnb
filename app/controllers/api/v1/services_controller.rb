@@ -28,7 +28,7 @@ class Api::V1::ServicesController < Api::V1::BaseController
 
   def destroy
     if @service.destroy
-      head: :no_content
+      head :no_content
     else
       render json: { message: "shit, something wrong happened"}
     end
