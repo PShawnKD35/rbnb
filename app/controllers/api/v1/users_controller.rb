@@ -1,6 +1,6 @@
 class Api::V1::UsersController < Api::V1::BaseController
   before_action :set_user, only: [:show, :update]
-  
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -33,7 +33,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   def set_user
     @user = User.find(params[:id])
   end
-  
+
   def user_params
     params.require(:user).permit(:email, :password, :name, :description, :is_shifu)
   end

@@ -5,7 +5,7 @@ class Api::V1::ServicesController < Api::V1::BaseController
 
   def index
     # @services = policy_scope(Service)
-    @services = Service.all
+    @services = Service.all.order('id DESC')
     render json: @services
   end
 
