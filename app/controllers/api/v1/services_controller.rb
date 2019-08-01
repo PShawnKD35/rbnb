@@ -16,7 +16,6 @@ class Api::V1::ServicesController < Api::V1::BaseController
 
   def create
     @service = Service.new(service_params)
-    @service.user = params[:user_id]
     if @service.save
       render json: @service
     else
@@ -49,6 +48,6 @@ class Api::V1::ServicesController < Api::V1::BaseController
   end
 
   def service_params
-    params.require(:service).permit(:name, :charge, :address, :description, :category)
+    params.require(:service).permit(:name, :charge, :address, :description, :category, :user_id)
   end
 end
