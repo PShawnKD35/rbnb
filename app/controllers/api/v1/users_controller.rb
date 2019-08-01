@@ -2,8 +2,10 @@ class Api::V1::UsersController < Api::V1::BaseController
   before_action :set_user, only: [:show, :update]
   
   def create
-    if User.create!(user_params)
-      render :show, status: :created
+    @user = User.new(user_params)
+    if @user.save
+      # render :show, status: :created
+      render json: { user_id: @user.id }, status: :created
     else
       render_error
     end
@@ -20,7 +22,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   def update
     if @user.update!(user_params)
-      render :show
+      head :no_content
     else
       render_error
     end
