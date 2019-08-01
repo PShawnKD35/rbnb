@@ -10,6 +10,7 @@ class Api::V1::ServicesController < Api::V1::BaseController
   end
 
   def show
+    @available_services = @service.available_services.reject { |available_service| available_service.bookings.any? { |booking| booking.confirmed } }
     # render json: @service
   end
 
