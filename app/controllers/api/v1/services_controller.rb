@@ -49,6 +49,6 @@ class Api::V1::ServicesController < Api::V1::BaseController
   end
 
   def service_params
-    params.require(:service).permit(:name, :charge, :address, :description)
+    params.require(:service).permit(:name, :charge, :address, :description, :category)
   end
 end
