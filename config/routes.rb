@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  post '/login', to: 'login#login'
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
+
+      post '/login', to: 'login#login'
 
       resources :users, only: [:create, :show, :update] do
         resources :services, only: [:create]
