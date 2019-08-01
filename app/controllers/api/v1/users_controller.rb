@@ -10,11 +10,12 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def show
-    if @user == current_user
-      render json: @user
-    else
-      render text: "permission denied"
-    end
+    render json: @user
+    # if @user == current_user
+    #   render json: @user
+    # else
+    #   render json: { message: "permission denied" }
+    # end
   end
 
   def update
