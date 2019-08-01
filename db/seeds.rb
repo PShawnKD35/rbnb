@@ -20,15 +20,80 @@ userone = User.create!(email: "irene@yahoo.com", password: "123456", name: "Iren
 usertwo = User.create!(email: "shawn@yahoo.com", password: "123456", name: "Shawn", is_shifu: true)
 userthree = User.create!(email: "olivia@yahoo.com", password: "123456", name: "Olivia", is_shifu: true)
 userfour = User.create!(email: "paul@yahoo.com", password: "123456", name: "Paul", is_shifu: true)
-# service
-userone_service = Service.create!(name: "DJ for 10 years", user: userone, charge: 10, address: "Kerry Centre, Shanghai, China", description: "I am a super experienced DJ. I have DJ-ed in Shanghai, London and Paris.")
-usertwo_service = Service.create!(name: "DJ for noobs", user: usertwo, charge: 10, address: "iapm, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!")
-userthree_service = Service.create!(name: "Best DJ in town", user: userthree, charge: 10, address: "the Puli hotel, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!")
-userfour_service = Service.create!(name: "Noob learn DJ", user: userfour, charge: 10, address: "Jing'an Temple, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!")
-# items
+
+#new user
+userfive = User.create!(email: "steven@yahoo.com", password: "123456", name: "Steven", is_shifu: true)
+usersix = User.create!(email: "jack@yahoo.com", password: "123456", name: "Jack", is_shifu: true)
+userseven = User.create!(email: "sarah@yahoo.com", password: "123456", name: "Sarah", is_shifu: true)
+
+usereight = User.create!(email: "frank@yahoo.com", password: "123456", name: "Frank", is_shifu: true)
+usernine = User.create!(email: "mark@yahoo.com", password: "123456", name: "Mark", is_shifu: true)
+userten = User.create!(email: "bell@yahoo.com", password: "123456", name: "Bell", is_shifu: true)
+
+usereleven = User.create!(email: "lisa@yahoo.com", password: "123456", name: "Lisa", is_shifu: true)
+usertwelve = User.create!(email: "tammy@yahoo.com", password: "123456", name: "Tammy", is_shifu: true)
+userthirteen = User.create!(email: "logan@yahoo.com", password: "123456", name: "Logan", is_shifu: true)
+userfourteen = User.create!(email: "ryan@yahoo.com", password: "123456", name: "Ryan", is_shifu: true)
+userfifteen = User.create!(email: "Jess@yahoo.com", password: "123456", name: "Jess", is_shifu: true)
+usersixteen = User.create!(email: "Patty@yahoo.com", password: "123456", name: "Patty", is_shifu: true)
+
+
+# user_dj service
+userone_service = Service.create!(name: "DJ for 10 years", user: userone, charge: 10, address: "Kerry Centre, Shanghai, China", description: "I am a super experienced DJ. I have DJ-ed in Shanghai, London and Paris.", category: "Music")
+usertwo_service = Service.create!(name: "DJ for noobs", user: usertwo, charge: 10, address: "iapm, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!", category: "Music")
+userthree_service = Service.create!(name: "Best DJ in town", user: userthree, charge: 10, address: "the Puli hotel, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!", category: "Music")
+userfour_service = Service.create!(name: "Noob learn DJ", user: userfour, charge: 10, address: "Jing'an Temple, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!", category: "Music")
+
+
+
+# user_outdoor  service
+userfive_service = Service.create!(name: "White Water Kayaker", user: userfive, charge: 10, address: "Jin Mao Tower, Shanghai, China", description: "Semi-professional white water kayaker!  Willing to spread my love of the sport with others!", category: "Outdoor")
+usersix_service = Service.create!(name: "Grill Master", user: usersix, charge: 10, address: "Jiao Tong University, Shanghai, China", description: "I love barbecuing and grilling culture.  I can teach you to grill like a pro!", category: "Outdoor")
+userseven_service = Service.create!(name: "Trying Deep Sea Fish", user: userseven, charge: 10, address: "Peoples Square, Shanghai, China", description: "I have been deep-sea fisihin for over 10 years.  Pleasure to show those interested my equipment!", category: "Outdoor")
+usereight_service = Service.create!(name: "New to Camping", user: usereight, charge: 10, address: "Le Royal Méridien, Shanghai, China", description: "I am an avid camper and would love sharing my eperience with everyone interested.", category: "Outdoor")
+
+
+# user_driving service
+usernine_service = Service.create!(name: "Shanghahi BMW Club Member", user: usernine, charge: 10, address: "Shanghai Library, Shanghai, China", description: "I am treasury of the Shanghai BMW auto-club.  Enjoy teaching others about BMW's history.", category: "Driving")
+userten_service = Service.create!(name: "Benz Enthusiast", user: userten, charge: 10, address: ", Donghua University, Shanghai, China", description: "I can teach you why Mercedes is the best car manufacturer out there.", category: "Driving")
+usereleven_service = Service.create!(name: "Giving Driving Lessons in the best car to drive.", user: usereleven, charge: 10, address: "Hongqiao Railway Station", description: "If you want to learn driving stickshift the right way, contact me.", category: "Driving")
+usertwelve_service = Service.create!(name: "Going Fast Nos Tank", user: usertwelve, charge: 10, address: "Shanghai Indoor Stadium, Shanghai, China", description: "I can show you everything you need to know about adding Nos to your engine.", category: "Driving")
+
+
+
+#user_music service
+userthirteen_service = Service.create!(name: "Who loves the electric guitar?", user: userthirteen, charge: 10, address: "The Bund, Shanghai, China", description: "I am the nephey of Jimi Hendrix and can show you my guitar collection.", category: "Music")
+userfourteen_service = Service.create!(name: "Anyone interested in tenor sax?", user: userfourteen, charge: 10, address: "JFrench Concession, Shanghai, China", description: "Have been playing in jazz bands around the world for over 20 years.", category: " Music")
+userfifteen_service = Service.create!(name: "Thinking about learning the piano", user: userfifteen, charge: 10, address: "Fudan University, Shanghai, China", description: "I am a concert pianist in the Shanghai symphony.  I want to spread my passion for this grand instrument.", category: "Music")
+usersixteen_service = Service.create!(name: "Interested in violins", user: usersixteen, charge: 10, address: "Tongji University, Shanghai, China", description: "I am a part of the Shanghai symphony orchestra.", category: "Music")
+
+
+
+# DJ Items
 Item.create!(name: "Cool DJ set", description: "Numark M2BLACK Professional Two-Channel Scratch Mixer with 3-band EQ per Channel", service: userone_service)
 Item.create!(name: "Awesome DJ set", description: "Rockville RDJ3BT2 Channel DJ Mixer with USB, Bluetooth, Talkover, 4 Line Inputs", service: usertwo_service)
 Item.create!(name: "Brand new DJ set", description: "Hercules DJControl Compact All-in-one Controller Solution with Virtual DJ LE Software Download", service: userthree_service)
 Item.create!(name: "Classic DJ set", description: "Numark M2BLACK Professional Two-Channel Scratch Mixer with 3-band EQ per Channel", service: userfour_service)
+
+
+# Outdoor Items
+Item.create!(name: "Orange Kayak", description: "Two seater orange kayak fantastic for white water kayaking.", service: userfive_service)
+Item.create!(name: "Barbecue Grill", description: "George Foreman Model: TT-300 Macho Grill.", service: usersix_service)
+Item.create!(name: "Deep Sea Fishing Poles", description: "Titanium fishing pole great for a deep sea fisihin experience.", service: userseven_service)
+Item.create!(name: "REI Tent", description: "REI Redwood Tent.", service: usereight_service)
+
+
+# Driving_items
+Item.create!(name: "BMW Orange 7 Series 2019", description: "For lovers of the ultimate driving machine", service: usernine_service)
+Item.create!(name: "Mercedes GLC-300 2014", description: "A great driving epxerience for those with a family", service: userten_service)
+Item.create!(name: "Porsche 911 2013", description: "More than happy to pass knowledge of cars to others", service: usereleven_service)
+Item.create!(name: "Fast and Furious Nos", description: "A sports car enthusiast can show you about car engines", service: usertwelve_service)
+
+# Music_items
+Item.create!(name: "Fender Guitar", description: "Love sharing passion for guitar playing with others", service: userthirteen_service)
+Item.create!(name: "Tenor Saxaphone", description: "George Suza classic tennor saxaphone", service: userfourteen_service)
+Item.create!(name: "Piano", description: "Black Steinway grand piano", service: userfifteen_service)
+Item.create!(name: "Clarinet", description: "Suza clarinet", service: usersixteen_service)
+
 # item on the same service
 Item.create!(name: "Iron Suit", description: "Bought at Avengers premium", service: usertwo_service)
