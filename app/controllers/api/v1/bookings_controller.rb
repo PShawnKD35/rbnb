@@ -3,7 +3,7 @@ class Api::V1::BookingsController < Api::V1::BaseController
   before_action :set_booking, only: [:update, :destroy]
 
   def create
-    @booking = Booking.new(params.require(:booking).permit(:user_id)
+    @booking = Booking.new(params.require(:booking).permit(:user_id))
     @booking.available_service_id = params[:available_service_id]
     @available_service = @booking.available_service
     
@@ -26,6 +26,11 @@ class Api::V1::BookingsController < Api::V1::BaseController
 
   def destroy
     head :no_content if @booking.destroy!
+  end
+
+  def index
+    @bookings = Booking.where(user_id: params[:user_id])
+    render json: @bookings
   end
 
   private

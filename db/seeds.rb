@@ -9,11 +9,12 @@
 User.destroy_all if Rails.env.development?
 
 dev_user = User.create!(email: "tony@stark.com", password: "1234qwer", name: "Tony Stark", is_shifu: true)
+# Booking example:
 rentee = User.create!(email: "dev@rbnb.com", password: "1234qwer", name: "Alpha Go")
-# dev_service = Service.create!(name: "Stark Industry Show Room", user: dev_user, charge: 1, address: "Marvel Virtual place")
-# Item.create!(name: "Iron Suit", service: dev_service)
-# available_service = AvailableService.create!(service: dev_service, start_time: Time.now, end_time: Time.now + 30)
-# Booking.create!(user: rentee, available_service: available_service)
+dev_service = Service.create!(name: "Stark Industry Show Room", user: dev_user, charge: 1, address: "Marvel Virtual place")
+Item.create!(name: "Iron Suit", service: dev_service)
+available_service = AvailableService.create!(service: dev_service, start_time: Time.now, end_time: Time.now + 30)
+Booking.create!(user: rentee, available_service: available_service)
 
 # user
 userone = User.create!(email: "irene@yahoo.com", password: "123456", name: "Irene", is_shifu: true)
