@@ -35,39 +35,49 @@ usereleven = User.create!(email: "lisa@yahoo.com", password: "123456", name: "Li
 usertwelve = User.create!(email: "tammy@yahoo.com", password: "123456", name: "Tammy", is_shifu: true)
 userthirteen = User.create!(email: "logan@yahoo.com", password: "123456", name: "Logan", is_shifu: true)
 userfourteen = User.create!(email: "ryan@yahoo.com", password: "123456", name: "Ryan", is_shifu: true)
-userfifteen = User.create!(email: "Jess@yahoo.com", password: "123456", name: "Jess", is_shifu: true)
-usersixteen = User.create!(email: "Patty@yahoo.com", password: "123456", name: "Patty", is_shifu: true)
+userfifteen = User.create!(email: "jess@yahoo.com", password: "123456", name: "Jess", is_shifu: true)
+usersixteen = User.create!(email: "patty@yahoo.com", password: "123456", name: "Patty", is_shifu: true)
+userseventeen = User.create!(email: "marco@yahoo.com", password: "123456", name: "Marco", is_shifu: true)
+usereighteen = User.create!(email: "martin@yahoo.com", password: "123456", name: "Martin", is_shifu: true)
+usernineteen = User.create!(email: "sergio@yahoo.com", password: "123456", name: "Sergio", is_shifu: true)
+usertwenty = User.create!(email: "martina@yahoo.com", password: "123456", name: "Martina", is_shifu: true)
 
 
 # user_dj service
 userone_service = Service.create!(name: "DJ for 10 years", user: userone, charge: 10, address: "Kerry Centre, Shanghai, China", description: "I am a super experienced DJ. I have DJ-ed in Shanghai, London and Paris.", category: "Music")
-usertwo_service = Service.create!(name: "DJ for noobs", user: usertwo, charge: 10, address: "iapm, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!", category: "Music")
-userthree_service = Service.create!(name: "Best DJ in town", user: userthree, charge: 10, address: "the Puli hotel, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!", category: "Music")
-userfour_service = Service.create!(name: "Noob learn DJ", user: userfour, charge: 10, address: "Jing'an Temple, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!", category: "Music")
+usertwo_service = Service.create!(name: "DJ for noobs", user: usertwo, charge: 15, address: "iapm, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!", category: "Music")
+userthree_service = Service.create!(name: "Best DJ in town", user: userthree, charge: 20, address: "the Puli hotel, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!", category: "Music")
+userfour_service = Service.create!(name: "Noob learn DJ", user: userfour, charge: 25, address: "Jing'an Temple, Shanghai, China", description: "This is my passion, been doing this for 5 years now. Don't be scared, if you give it a go, you will love it!", category: "Music")
 
 
 
 # user_outdoor  service
-userfive_service = Service.create!(name: "White Water Kayaker", user: userfive, charge: 10, address: "Jin Mao Tower, Shanghai, China", description: "Semi-professional white water kayaker!  Willing to spread my love of the sport with others!", category: "Outdoor")
-usersix_service = Service.create!(name: "Grill Master", user: usersix, charge: 10, address: "Jiao Tong University, Shanghai, China", description: "I love barbecuing and grilling culture.  I can teach you to grill like a pro!", category: "Outdoor")
-userseven_service = Service.create!(name: "Trying Deep Sea Fish", user: userseven, charge: 10, address: "Peoples Square, Shanghai, China", description: "I have been deep-sea fisihin for over 10 years.  Pleasure to show those interested my equipment!", category: "Outdoor")
-usereight_service = Service.create!(name: "New to Camping", user: usereight, charge: 10, address: "Le Royal Méridien, Shanghai, China", description: "I am an avid camper and would love sharing my eperience with everyone interested.", category: "Outdoor")
+userfive_service = Service.create!(name: "White Water Kayaker", user: userfive, charge: 30, address: "Jin Mao Tower, Shanghai, China", description: "Semi-professional white water kayaker!  Willing to spread my love of the sport with others!", category: "Outdoor", remote_photo_url: "/images/kayak.jpg")
+usersix_service = Service.create!(name: "Grill Master", user: usersix, charge: 15, address: "Jiao Tong University, Shanghai, China", description: "I love barbecuing and grilling culture.  I can teach you to grill like a pro!", category: "Outdoor", remote_photo_url: "/images/Grill.jpeg")
+userseven_service = Service.create!(name: "Trying Deep Sea Fish", user: userseven, charge: 16, address: "Peoples Square, Shanghai, China", description: "I have been deep-sea fisihin for over 10 years.  Pleasure to show those interested my equipment!", category: "Outdoor", remote_photo_url: "/images/Sea-Fishing-Rods.jpg")
+usereight_service = Service.create!(name: "New to Camping", user: usereight, charge: 32, address: "Le Royal Méridien, Shanghai, China", description: "I am an avid camper and would love sharing my eperience with everyone interested.", category: "Outdoor", remote_photo_url: "/images/rei-trail-dome-2-tent-complete-with-rainfly-footprint-euc.jpg")
 
 
 # user_driving service
-usernine_service = Service.create!(name: "Shanghahi BMW Club Member", user: usernine, charge: 10, address: "Shanghai Library, Shanghai, China", description: "I am treasury of the Shanghai BMW auto-club.  Enjoy teaching others about BMW's history.", category: "Driving")
-userten_service = Service.create!(name: "Benz Enthusiast", user: userten, charge: 10, address: ", Donghua University, Shanghai, China", description: "I can teach you why Mercedes is the best car manufacturer out there.", category: "Driving")
-usereleven_service = Service.create!(name: "Giving Driving Lessons in the best car to drive.", user: usereleven, charge: 10, address: "Hongqiao Railway Station", description: "If you want to learn driving stickshift the right way, contact me.", category: "Driving")
-usertwelve_service = Service.create!(name: "Going Fast Nos Tank", user: usertwelve, charge: 10, address: "Shanghai Indoor Stadium, Shanghai, China", description: "I can show you everything you need to know about adding Nos to your engine.", category: "Driving")
+usernine_service = Service.create!(name: "Shanghahi BMW Club Member", user: usernine, charge: 25, address: "Shanghai Library, Shanghai, China", description: "I am treasury of the Shanghai BMW auto-club.  Enjoy teaching others about BMW's history.", category: "Driving", remote_photo_url: "/images/bmw.jpeg" )
+userten_service = Service.create!(name: "Benz Enthusiast", user: userten, charge: 20, address: ", Donghua University, Shanghai, China", description: "I can teach you why Mercedes is the best car manufacturer out there.", category: "Driving", remote_photo_url: "/images/mercedes.jpg" )
+usereleven_service = Service.create!(name: "Giving Driving Lessons in the best car to drive.", user: usereleven, charge: 10, address: "Hongqiao Railway Station", description: "If you want to learn driving stickshift the right way, contact me.", category: "Driving", remote_photo_url: "/images/porsche.jpg")
+usertwelve_service = Service.create!(name: "Going Fast Nos Tank", user: usertwelve, charge: 10, address: "Shanghai Indoor Stadium, Shanghai, China", description: "I can show you everything you need to know about adding Nos to your engine.", category: "Driving", remote_photo_url: "/images/nos.jpeg")
 
 
 
 #user_music service
-userthirteen_service = Service.create!(name: "Who loves the electric guitar?", user: userthirteen, charge: 10, address: "The Bund, Shanghai, China", description: "I am the nephey of Jimi Hendrix and can show you my guitar collection.", category: "Music")
-userfourteen_service = Service.create!(name: "Anyone interested in tenor sax?", user: userfourteen, charge: 10, address: "JFrench Concession, Shanghai, China", description: "Have been playing in jazz bands around the world for over 20 years.", category: " Music")
-userfifteen_service = Service.create!(name: "Thinking about learning the piano", user: userfifteen, charge: 10, address: "Fudan University, Shanghai, China", description: "I am a concert pianist in the Shanghai symphony.  I want to spread my passion for this grand instrument.", category: "Music")
-usersixteen_service = Service.create!(name: "Interested in violins", user: usersixteen, charge: 10, address: "Tongji University, Shanghai, China", description: "I am a part of the Shanghai symphony orchestra.", category: "Music")
+userthirteen_service = Service.create!(name: "Who loves the electric guitar?", user: userthirteen, charge: 10, address: "The Bund, Shanghai, China", description: "I am the nephey of Jimi Hendrix and can show you my guitar collection.", category: "Music", remote_photo_url: "/images/fender.jpeg")
+userfourteen_service = Service.create!(name: "Anyone interested in tenor sax?", user: userfourteen, charge: 10, address: "JFrench Concession, Shanghai, China", description: "Have been playing in jazz bands around the world for over 20 years.", category: " Music", remote_photo_url: "/images/Saxophone-compressor.png")
+userfifteen_service = Service.create!(name: "Thinking about learning the piano", user: userfifteen, charge: 10, address: "Fudan University, Shanghai, China", description: "I am a concert pianist in the Shanghai symphony.  I want to spread my passion for this grand instrument.", category: "Music", remote_photo_url: "/images/piano.jpeg" )
+usersixteen_service = Service.create!(name: "Interested in violins", user: usersixteen, charge: 10, address: "Tongji University, Shanghai, China", description: "I am a part of the Shanghai symphony orchestra.", category: "Music", remote_photo_url: "/images/violin.jpeg")
+usernineteen_service = Service.create!(name: "Classical pianist form London", user: usernineteen, charge: 40, address: "Jiading, Shanghai, China", description: "Sharing new VR experience!", category: "Music", remote_photo_url: "/images/yamaha.jpeg")
+usertwenty_service = Service.create!(name: "Music producer", user: usertwenty, charge: 35, address: "Jiading, Shanghai, China", description: "Sharing new VR experience!", category: "Music", remote_photo_url: "/images/kawai.jpg")
 
+
+# uers_tech service
+userseventeen_service = Service.create!(name: "Tech Savy Guy", user: userseventeen, charge: 10, address: "Huashan Hospital, Shanghai, China", description: "Who loves VR?", category: "Tech", remote_photo_url: "/images/Oculus.jpeg")
+usereighteen_service = Service.create!(name: "Virtual Fun", user: usereighteen, charge: 20, address: "Jiading, Shanghai, China", description: "Sharing new VR experience!", category: "Tech", remote_photo_url: "/images/Oculus.jpeg")
 
 
 # DJ Items
@@ -94,7 +104,15 @@ Item.create!(name: "Fast and Furious Nos", description: "A sports car enthusiast
 Item.create!(name: "Fender Guitar", description: "Love sharing passion for guitar playing with others", service: userthirteen_service)
 Item.create!(name: "Tenor Saxaphone", description: "George Suza classic tennor saxaphone", service: userfourteen_service)
 Item.create!(name: "Piano", description: "Black Steinway grand piano", service: userfifteen_service)
-Item.create!(name: "Clarinet", description: "Suza clarinet", service: usersixteen_service)
+Item.create!(name: "Violin", description: "Red Violin", service: usersixteen_service)
+
+# Tech_items
+Item.create!(name: "Ocolus Rift", description: "Oculus Rift with many games", service: userseventeen_service)
+Item.create!(name: "Super Cool Oculus Rift", description: "Vitual experience with Oculus Rift", service: usereighteen_service)
+
+# Music_items
+Item.create!(name: "Brenner Piano", description: "World class piano", service: usernineteen_service)
+Item.create!(name: "Yamaha", description: "Yahama XS-300", service: usertwenty_service)
 
 # item on the same service
 Item.create!(name: "Iron Suit", description: "Bought at Avengers premium", service: usertwo_service)
