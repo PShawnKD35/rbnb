@@ -12,7 +12,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def show
-    render json: @user
+    # render json: @user
     # if @user == current_user
     #   render json: @user
     # else
