@@ -5,7 +5,7 @@ class Api::V1::ServicesController < Api::V1::BaseController
 
   def index
     # @services = policy_scope(Service)
-    @services = Service.all
+    @services = Service.all.order(updated_at: :desc)
     render json: @services
   end
 
@@ -16,11 +16,11 @@ class Api::V1::ServicesController < Api::V1::BaseController
 
   def create
     @service = Service.new(service_params)
-    @service.user = params[:user_id]
-    if @service.save
+    @service.user_id = params[:user_id]
+    if @service.save!
       render json: @service
-    else
-      render json: { message: "shit, something wrong happened" }
+    # else
+    #   render json: { message: "shit, something wrong happened" }
     end
   end
 
@@ -28,10 +28,10 @@ class Api::V1::ServicesController < Api::V1::BaseController
   end
 
   def destroy
-    if @service.destroy
+    if @service.destroy!
       head :no_content
-    else
-      render json: { message: "shit, something wrong happened"}
+    # else
+    #   render json: { message: "shit, something wrong happened"}
     end
   end
 
@@ -49,6 +49,6 @@ class Api::V1::ServicesController < Api::V1::BaseController
   end
 
   def service_params
-    params.require(:service).permit(:name, :charge, :address, :description)
+    params.require(:service).permit(:name, :charge, :address, :description, :category)
   end
 end
