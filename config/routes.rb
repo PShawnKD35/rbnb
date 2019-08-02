@@ -16,6 +16,7 @@ Rails.application.routes.draw do
           get 'search'
         end
         resources :available_services, only: [:create]
+        post 'items', to: "services#add_item"
       end
 
       resources :available_services, only: [:destroy] do

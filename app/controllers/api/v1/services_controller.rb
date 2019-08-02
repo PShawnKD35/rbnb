@@ -41,6 +41,12 @@ class Api::V1::ServicesController < Api::V1::BaseController
     render json: @services
   end
 
+  def add_item
+    @item = Item.new(params.require(:item).permit(:name, :description, :purchase_date))
+    @item.service_id = params[:service_id]
+    render json: @item if @item.save!
+  end
+
   private
 
   def set_service
